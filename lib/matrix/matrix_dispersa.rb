@@ -1,0 +1,7 @@
+
+
+class dispersa < Matriz
+
+
+
+end
