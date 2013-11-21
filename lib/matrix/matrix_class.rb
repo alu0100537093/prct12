@@ -15,6 +15,30 @@ class Matriz
         
         
         
+	def Matriz.tipo(array)
+		
+		@fil = array.size
+		@col = array.size
+		@matrix = array;
+
+	  aux = 0;
+    
+	for i in 0...@fil do
+		for j in 0...@col do
+		    if (@matrix[i][j] == 0)
+			aux += 1
+		    end
+		end
+	end
+
+	if (((aux*100)/(@fil*@col)) >= 60)
+	      MatrizDispersa.new(array)
+	else
+	      MatrizDensa.new(array)
+	end
+	end
+	
+	
         
         def +(other) #Sobrecarga del operador + para sumar dos matrices
                 

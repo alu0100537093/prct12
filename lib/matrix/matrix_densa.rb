@@ -1,6 +1,6 @@
+require "matrix_class.rb"
 
-
-class densa < Matriz
+class Densa < Matriz
 
 
 

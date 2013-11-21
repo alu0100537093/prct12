@@ -1,5 +1,4 @@
 
-
 class Fraccion 
  
         include Comparable

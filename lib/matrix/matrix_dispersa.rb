@@ -1,6 +1,6 @@
+require "matrix_class.rb"
 
-
-class dispersa < Matriz
+class Dispersa < Matriz
 
 
 
