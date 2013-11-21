@@ -1,5 +1,5 @@
 require "lib/matrix/matrix_class.rb"
-require "lib/matrix/fraccion.rb"
+require "lib/fraccion.rb"
 
 
 describe Matriz do
