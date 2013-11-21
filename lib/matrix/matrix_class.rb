@@ -15,7 +15,7 @@ class Matriz
         
         
         
-	def Matriz.tipo(array)
+	def tipo(array)
 		
 		@fil = array.size
 		@col = array.size
@@ -32,10 +32,13 @@ class Matriz
 	end
 
 	if (((aux*100)/(@fil*@col)) >= 60)
-	      MatrizDispersa.new(array)
+
+	      Dispersa.new(array)
 	else
-	      MatrizDensa.new(array)
+
+	      Densa.new(array)
 	end
+
 	end
 	
 	
@@ -144,6 +147,11 @@ class Matriz
                 Matriz.new(copia)
         
         end
+
+
+
+	
+
 
 end
 
