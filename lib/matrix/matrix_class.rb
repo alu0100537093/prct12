@@ -6,7 +6,7 @@ class Matriz
 
         def initialize(array)
 	  
-	       @fil = array.size
+	        @fil = array.size
 		@col = array.size
 		@matrix = array;
 	
@@ -41,7 +41,11 @@ class Matriz
 	
         
         def +(other) #Sobrecarga del operador + para sumar dos matrices
-                
+
+
+	if (self.instance_of?(Matriz) || self.instance_of?(Densa)) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
+
+
                 copia = @matrix
                 for i in (0...@fil)
                         for j in (0...@col)
@@ -50,11 +54,49 @@ class Matriz
                 end
         
         Matriz.new(copia)
+
+	
+
+	elsif self.instance_of?(Dispersa) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
+
+	
+		p = self.to_densa
+
+		(p + other)
+
+	
+
+	elsif other.instance_of?(Dispersa) && (self.instance_of?(Matriz) || self.instance_of?(Densa))
+
+		p = other.to_densa
+
+		(self + p)
+	
+
+	elsif self.instance_of?(Dispersa) && other.instance_of?(Dispersa)
+
+
+		p = self.to_densa
+
+		d = other.to_densa
+
+
+		(p + d)
+
+
+	end
+	
+
+	
+	
         
         end
                                 
 
         def -(other) #Sobrecarga del operador - para restar dos matrices
+
+
+	if (self.instance_of?(Matriz) || self.instance_of?(Densa)) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
                 
                 copia = @matrix
                 for i in (0...@fil)
@@ -64,12 +106,49 @@ class Matriz
                 end
         
         Matriz.new(copia)
+
+
+	elsif self.instance_of?(Dispersa) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
+
+	
+		p = self.to_densa
+
+		(p - other)
+
+	
+
+	elsif other.instance_of?(Dispersa) && (self.instance_of?(Matriz) || self.instance_of?(Densa))
+
+		p = other.to_densa
+
+		(self - p)
+	
+
+	elsif self.instance_of?(Dispersa) && other.instance_of?(Dispersa)
+
+
+		p = self.to_densa
+
+		d = other.to_densa
+
+
+		(p - d)
+
+
+	end
+	
+
+	
         
         end
 
         
         
         def *(other) # Sobrecarga del operador * para que multiplique dos matrices.
+
+
+
+	if (self.instance_of?(Matriz) || self.instance_of?(Densa)) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
 
         copia = Array.new(@fil) {Array.new(other.col)}
 
@@ -91,6 +170,37 @@ class Matriz
                         
                         
         Matriz.new(copia)
+
+
+	elsif self.instance_of?(Dispersa) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
+
+	
+		p = self.to_densa
+
+		(p * other)
+
+	
+
+	elsif other.instance_of?(Dispersa) && (self.instance_of?(Matriz) || self.instance_of?(Densa))
+
+		p = other.to_densa
+
+		(self * p)
+	
+
+	elsif self.instance_of?(Dispersa) && other.instance_of?(Dispersa)
+
+
+		p = self.to_densa
+
+		d = other.to_densa
+
+
+		(p * d)
+
+
+	end
+	
                 
 
 
@@ -132,6 +242,9 @@ class Matriz
         
         
         def traspuesta #Metodo para hallar la traspuesta de una matriz
+
+
+	if self.instance_of?(Matriz) || self.instance_of(Densa)
         
                 copia = Array.new(@fil) {Array.new(@col)}
                 
@@ -142,11 +255,28 @@ class Matriz
                 end
                 
                 Matriz.new(copia)
+
+
+	elsif self.instance_of?(Dispersa)
+
+	
+	p = self.to_densa
+
+	p.traspuesta
+
+	
+	
+
+	end
+	
         
         end
 
 
 	def maximo
+
+
+	if self.instance_of?(Matriz) || self.instance_of(Densa)
 	
 	
 	numeromax = 0
@@ -167,14 +297,30 @@ class Matriz
 	numeromax
 
 
+	elsif self.instance_of?(Dispersa)
+
+
+	p = self.to_densa
+
+
+	p.maximo
+
+
+	end
+	
+
+
 	end
 
 
 
 	def minimo
+
+
+	if self.instance_of?(Matriz) || self.instance_of(Densa)
 	
 	
-	numeromin = 100000
+	numeromin = 10000000
 	
                 for i in (0...@fil)
                         for j in (0...@col)
@@ -192,8 +338,24 @@ class Matriz
 	numeromin
 
 
+
+	elsif self.instance_of?(Dispersa)
+
+
+	p = self.to_densa
+
+
+	p.minimo
+
+
+	end
+	
+
+
 	end
 
+
+	
 
 
 end

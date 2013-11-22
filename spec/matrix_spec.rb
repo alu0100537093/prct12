@@ -99,4 +99,77 @@ describe "Operaciones con matrices discretas" do
 	
 	end
 
+
+	it "Se deben sumar 2 matrices densas" do
+
+
+		(@m5 + @m5).should == Densa.new([[0,8,0],[0,0,4],[0,0,10]])
+	
+	end
+
+
+
+	it "Se debe sumar 1 matriz densa con una matriz dispersa" do
+
+
+		(@m5 + @m6).should == Densa.new([[0,8,0],[0,0,4],[0,0,10]])
+
+	end
+
+	it "Se debe sumar 2 matrices dispersas" do
+		
+
+		(@m6 + @m6).should == Densa.new([[0,8,0],[0,0,4],[0,0,10]])
+	
+	end
+
+
+	it "Se deben restar 2 matrices densas" do
+
+
+		(@m5 - @m5).should == Densa.new([[0,0,0],[0,0,0],[0,0,0]])
+	
+	end
+
+
+
+	it "Se debe restar 1 matriz densa con una matriz dispersa" do
+
+
+		(@m5 - @m6).should == Densa.new([[0,0,0],[0,0,0],[0,0,0]])
+
+	end
+
+	it "Se debe restar 2 matrices dispersas" do
+		
+
+		(@m6 - @m6).should == Densa.new([[0,0,0],[0,0,0],[0,0,0]])
+	
+	end	
+
+
+	it "Se deben multiplicar 2 matrices densas" do
+
+
+		(@m5 * @m5).should == Densa.new([[0,0,8],[0,0,10],[0,0,25]])
+	
+	end
+
+
+
+	it "Se debe multiplicar 1 matriz densa con una matriz dispersa" do
+
+
+		(@m5 * @m6).should == Densa.new([[0,0,8],[0,0,10],[0,0,25]])
+
+	end
+
+	it "Se debe multiplicar 2 matrices dispersas" do
+		
+
+		(@m6 * @m6).should == Densa.new([[0,0,8],[0,0,10],[0,0,25]])
+	
+	end	
+
+
 end
