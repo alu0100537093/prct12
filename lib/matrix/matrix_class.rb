@@ -417,7 +417,7 @@ class Dispersa < Matriz
 	def to_densa
 
 
-	array = Array.new(@m,0) {Array.new(@n,0) }
+	array = Array.new(@m) {Array.new(@n,0) }
 
 	for i in 0...@m 
 	
