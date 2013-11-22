@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 
 Usar rake para ejecucion del rspec
-
+Usar rake test para ejecucion del test de las pruebas unitarias
 
 ## Contributing
 
