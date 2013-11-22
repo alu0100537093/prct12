@@ -6,18 +6,17 @@ class Matriz
 
         def initialize(array)
 	  
-	  tipo(array)
+	       @fil = array.size
+		@col = array.size
+		@matrix = array;
 	
 	end
 	
 	
         
         
-	def tipo(array)
-		
-		@fil = array.size
-		@col = array.size
-		@matrix = array;
+	def tipo
+	
 
 	  aux = 0;
     
@@ -31,10 +30,10 @@ class Matriz
 
 	if (((aux*100)/(@fil*@col)) >= 60)
 
-	      Dispersa.new(array)
+	      Dispersa.new(@matrix)
 	else
 
-	      Densa.new(array)
+	      Densa.new(@matrix)
 	end
 
 	end
@@ -147,6 +146,56 @@ class Matriz
         end
 
 
+	def maximo
+	
+	
+	numeromax = 0
+	
+                for i in (0...@fil)
+                        for j in (0...@col)
+                                
+				if matrix[i][j] > numeromax
+
+				numeromax = matrix[i][j]
+
+				end
+
+
+                        end
+                end
+
+	numeromax
+
+
+	end
+
+
+
+	def minimo
+	
+	
+	numeromin = 100000
+	
+                for i in (0...@fil)
+                        for j in (0...@col)
+                                
+				if matrix[i][j] < numeromin
+
+				numeromin = matrix[i][j]
+
+				end
+
+
+                        end
+                end
+
+	numeromin
+
+
+	end
+
+
+
 end
 	
 class Densa < Matriz
@@ -154,7 +203,7 @@ class Densa < Matriz
 attr_reader :fil, :col, :matrix
 	
 
-	def initialize
+	def initialize(array)
 
 		@fil = array.size
 		@col = array.size
@@ -165,6 +214,8 @@ attr_reader :fil, :col, :matrix
 
 end
 
+
+
 class Dispersa < Matriz
 	
 	attr_reader :contador, :vectordatos, :vectorposicion, :m, :n
@@ -173,6 +224,9 @@ class Dispersa < Matriz
 
 	@m = array.size
 	@n = array.size
+
+	@vectordatos = Array.new(@m*@n)
+	@vectorposicion = Array.new(@m*@n) { Array.new(2)}
 	
 	@contador = 0
 
@@ -201,6 +255,7 @@ class Dispersa < Matriz
 	def to_densa
 
 
+	array = Array.new(@m,0) {Array.new(@n,0) }
 
 	for i in 0...@m 
 	
@@ -214,13 +269,9 @@ class Dispersa < Matriz
 				
 				array[i][j] = @vectordatos[z]
 
-				else
-
-				array[i][j] = 0
-
-		
 				end
 
+			
 			end
 		
 		end

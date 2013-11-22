@@ -8,6 +8,9 @@ class Dispersa < Matriz
 
 	@m = array.size
 	@n = array.size
+
+	@vectordatos = Array.new(@m*@n)
+	@vectorposicion = Array.new(@m*@n) { Array.new(2)}
 	
 	@contador = 0
 
@@ -36,6 +39,7 @@ class Dispersa < Matriz
 	def to_densa
 
 
+	array = Array.new(@m,0) {Array.new(@n,0) }
 
 	for i in 0...@m 
 	
@@ -49,13 +53,9 @@ class Dispersa < Matriz
 				
 				array[i][j] = @vectordatos[z]
 
-				else
-
-				array[i][j] = 0
-
-		
 				end
 
+			
 			end
 		
 		end
@@ -71,3 +71,6 @@ class Dispersa < Matriz
 
 
 end
+
+
+

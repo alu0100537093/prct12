@@ -5,7 +5,7 @@ class Densa < Matriz
 attr_reader :fil, :col, :matrix
 	
 
-	def initialize
+	def initialize(array)
 
 		@fil = array.size
 		@col = array.size
@@ -15,3 +15,4 @@ attr_reader :fil, :col, :matrix
 
 
 end
+

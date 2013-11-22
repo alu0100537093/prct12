@@ -2,6 +2,8 @@ require "lib/matrix/matrix_class.rb"
 require "lib/matrix/fraccion.rb"
 
 
+
+
 describe Matriz do
 
 	before :each do
@@ -53,11 +55,7 @@ describe "Modificacion para poder trabajar con matrices formadas por fracciones"
 	
 	end
 	
-	it "Producto de matrices formadas por fracciones" do
 	
-		(@m3*@m3).should == @m4
-	
-	end
 end
 
 
@@ -67,12 +65,37 @@ describe "Operaciones con matrices discretas" do
 	before :each do
 	  
 		@m5 = Densa.new([[0,4,0],[0,0,2],[0,0,5]])
+
+		@m6 = Dispersa.new([[0,4,0],[0,0,2],[0,0,5]])
+
+		@m7 = Matriz.new([[0,4,0],[0,0,2],[0,0,5]])
+
+		@m8 = @m7.tipo
 	
 	end
 	
 	it "La matriz debe ser representada como dispersa" do
 	    
-		@m5.should == Dispersa.to_densa.new([[0,4,0],[0,0,2],[0,0,5]])
+		@m6.to_densa.should == @m5
+	
+	end
+
+	it "La matriz de la clase Matriz se debe transformar a discreta y luego a densa" do
+
+		@m8.to_densa.should == @m5	
+
+	end
+
+
+	it "Mostrar el maximo de la matriz" do
+
+		@m7.maximo.should == 5	
+	
+	end
+
+		it "Mostrar el minimo de la matriz" do
+
+		@m7.minimo.should == 0
 	
 	end
 
