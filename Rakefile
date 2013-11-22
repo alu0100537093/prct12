@@ -12,3 +12,9 @@ task :rspec do
         sh "rspec -I. spec/matrix_spec.rb"
 
 end
+
+task :test do
+  
+	sh "ruby -I. test/tc_matrix.rb"
+
+end
