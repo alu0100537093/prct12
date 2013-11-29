@@ -170,6 +170,15 @@ describe "Operaciones con matrices discretas" do
 		(@m6 * @m6).should == Densa.new([[0,0,8],[0,0,10],[0,0,25]])
 	
 	end	
+	
+	
+	it "Se debe encontrar un valor cuyo cuadrado sea mayor igual que 16" do
+	   
+	   
+	   @m7.encontrar{ |e| e*e >=16 }.should == [0,1]
+	    
+	    
+	end    
 
 
 end

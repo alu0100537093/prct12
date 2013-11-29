@@ -201,7 +201,7 @@ class Matriz
 
 	end
 	
-                
+                 
 
 
         end
@@ -353,6 +353,37 @@ class Matriz
 
 
 	end
+
+
+    def encontrar
+        
+        
+                
+        
+        
+                @fil.times do |i|
+                    
+                        @col.times do |j|
+                                
+                            value = @matrix[i][j]
+                        
+                            if yield(value)
+                            
+                            return i,j
+                            
+                            end    
+                                
+                        end
+                end
+        
+	
+	return nil
+        
+        
+    end    
+    
+    
+    
 
 
 	
