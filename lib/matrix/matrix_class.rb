@@ -6,7 +6,7 @@ class Matriz
 
         def initialize(array)
 	  
-	        @fil = array.size
+	    @fil = array.size
 		@col = array.size
 		@matrix = array;
 	
@@ -47,8 +47,8 @@ class Matriz
 
 
                 copia = @matrix
-                for i in (0...@fil)
-                        for j in (0...@col)
+                @fil.times do |i|
+                        @col.times do |j|
                                 copia[i][j] = copia[i][j] + other.matrix[i][j]
                         end
                 end
@@ -99,8 +99,8 @@ class Matriz
 	if (self.instance_of?(Matriz) || self.instance_of?(Densa)) && (other.instance_of?(Matriz) || other.instance_of?(Densa))
                 
                 copia = @matrix
-                for i in (0...@fil)
-                        for j in (0...@col)
+                @fil.times do |i|
+                        @col.times do |j|
                                 copia[i][j] = copia[i][j] - other.matrix[i][j]
                         end
                 end
