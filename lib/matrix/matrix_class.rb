@@ -152,13 +152,13 @@ class Matriz
 
         copia = Array.new(@fil) {Array.new(other.col)}
 
-        for i in (0...@fil)
+        @fil.times do |i|
 
-                for j in (0...other.col)
+                @col.times do |j|
                 
                         copia[i][j] = 0
 
-                        for z in (0...@col)
+                       @col.times do |z|
         
                                 copia[i][j] = copia[i][j] + (matrix[i][z] * other.matrix[z][j])
 
