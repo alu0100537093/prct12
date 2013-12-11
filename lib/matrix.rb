@@ -4,7 +4,7 @@ module Matrix
 
     require "matrix/fraccion"
     require "matrix/matrix_class"
-    require "matrices/matrizDSL.rb"
+    require "matrix/matrixDSL.rb"
  
  
 end

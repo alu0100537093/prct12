@@ -1,6 +1,4 @@
-require "lib/matrix/matrix_class.rb"
-require "lib/matrix/fraccion.rb"
-require "lib/matrix/matrixDSL.rb"
+require "matrix.rb"
 
 
 
@@ -192,6 +190,7 @@ describe MatrixDSL do
     before :each do
 	  
 	 @ejemplo1 = MatrixDSL.new("Suma") do 
+	     
 		operand([[1,1],[1,1]])
 		operand([[1,1],[1,1]])
 		
@@ -228,11 +227,15 @@ describe MatrixDSL do
   
 
     	
-	it "el resultado de la resta debe dar correcto" do
+	it "el resultado del producto debe dar correcto" do
 
   	@ejemplo3.resultado.should == ('[[7,10],[15,22]]')
     
    end
+   
+
+   
+   
     
 
 end

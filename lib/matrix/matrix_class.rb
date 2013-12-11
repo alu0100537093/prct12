@@ -384,6 +384,31 @@ class Matriz
     
     
     
+    
+    def to_s
+            	string= "["
+            	filas=0
+            	while (filas < @fil)
+                    		string = string + "["
+                    		colu=0
+                    		while (colu<@col)
+                            		string = string + "#{self[filas,colu]}"
+                            		colu += 1
+                            		if(colu < @col)
+                                    		string = string + ","
+                            		end
+                    		end
+                    		string = string + "]"
+                    		filas += 1
+                    		if (filas < @fil)
+                            		string = string + ","
+                    		end
+            	end
+            	string = string + "]"
+    end
+
+    
+    
 
 
 	

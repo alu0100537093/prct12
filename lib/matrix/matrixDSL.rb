@@ -64,7 +64,7 @@ attr_accessor :operando, :operador
       
       copia2 = copia.tipo
       
-      self.operando.push copia2.matrix
+      self.operando = copia2.matrix
   
   
      end
