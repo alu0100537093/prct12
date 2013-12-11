@@ -1,5 +1,10 @@
 require "matrix/version"
 
 module Matrix
-  # Your code goes here...
+
+    require "matrix/fraccion"
+    require "matrix/matrix_class"
+    require "matrices/matrizDSL.rb"
+ 
+ 
 end

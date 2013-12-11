@@ -1,6 +1,6 @@
 class MatrixDSL
     
-attr_accesor :operando, :operador
+attr_accessor :operando, :operador
 
 
 	def initialize(op, &block)
@@ -57,49 +57,20 @@ attr_accesor :operando, :operador
 			fsalida.close
 		end
 	end
+	
+	def operand(array)
+     
+      copia = Matriz.new(array)
+      
+      copia2 = copia.tipo
+      
+      self.operando.push copia2.matrix
   
+  
+     end
+	
+	
+	
 end
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-end

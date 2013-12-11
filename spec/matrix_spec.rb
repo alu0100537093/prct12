@@ -1,5 +1,6 @@
 require "lib/matrix/matrix_class.rb"
 require "lib/matrix/fraccion.rb"
+require "lib/matrix/matrixDSL.rb"
 
 
 
@@ -37,6 +38,7 @@ describe Matriz do
         @m1.traspuesta.should == Matriz.new([[2,3,1],[5,1,2],[3,4,3]])
 	
 	end
+	
 end
 
 describe "Modificacion para poder trabajar con matrices formadas por fracciones" do
@@ -178,9 +180,59 @@ describe "Operaciones con matrices discretas" do
 	   @m7.encontrar{ |e| e*e >=16 }.should == [0,1]
 	    
 	    
-	end  
+	end 
 	
+	
+end
 	  
 describe MatrixDSL do
+    
+    
+
+    before :each do
+	  
+	 @ejemplo1 = MatrixDSL.new("Suma") do 
+		operand([[1,1],[1,1]])
+		operand([[1,1],[1,1]])
+		
+	end
+	
+	
+	@ejemplo2 = MatrixDSL.new("Resta") do 
+		operand([[2,2],[2,2]])
+		operand([[1,1],[1,1]])
+		
+	end
+	
+	@ejemplo3 = MatrixDSL.new("Producto") do 
+		operand([[1,2],[3,4]])
+		operand([[1,2],[3,4]])
+	end
+	
+	end
+    
+   	
+	it "el resultado de la suma debe dar correcto" do
+	
+	        @ejemplo1.resultado.should == ('[[2,2],[2,2]]') 
+  
+
+	end
+	
+	it "el resultado de la resta debe dar correcto" do
+		    
+		    @ejemplo2.resultado.should == ('[[1,1],[1,1]]') 
+		    
+		    
+    end
+  
+
+    	
+	it "el resultado de la resta debe dar correcto" do
+
+  	@ejemplo3.resultado.should == ('[[7,10],[15,22]]')
+    
+   end
+    
 
 end
