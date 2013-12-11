@@ -1,6 +1,6 @@
 # Matrix
 
-TODO: Write a gem description
+Gema con distintas funciones para la gestion de matrices
 
 ## Installation
 
@@ -28,3 +28,12 @@ Usar rake test para ejecucion del test de las pruebas unitarias
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+##Dependencias de la gema en gemnasium
+
+https://gemnasium.com/alu0100595727/prct12
+
+##Componentes de desarrollo
+
+Jazer Abreu Chinea
+Daniel Luis Martin
