@@ -62,9 +62,9 @@ attr_accessor :operando, :operador
      
       x = Matriz.new(array)
       
-      #copia2 = x.tipo
+      copia2 = x.tipo
       
-      self.operando.push x
+      self.operando.push copia2
   
   
      end

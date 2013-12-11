@@ -392,7 +392,7 @@ class Matriz
                     		string = string + "["
                     		colu=0
                     		while (colu<@col)
-                            		string = string + "#{self[filas,colu]}"
+                            		string = string + "#{@matrix[filas][colu]}"
                             		colu += 1
                             		if(colu < @col)
                                     		string = string + ","
