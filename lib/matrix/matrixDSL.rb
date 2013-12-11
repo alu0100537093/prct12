@@ -60,11 +60,11 @@ attr_accessor :operando, :operador
 	
 	def operand(array)
      
-      copia = Matriz.new(array)
+      x = Matriz.new(array)
       
-      copia2 = copia.tipo
+      #copia2 = x.tipo
       
-      self.operando = copia2.matrix
+      self.operando.push x
   
   
      end

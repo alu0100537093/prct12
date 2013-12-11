@@ -185,7 +185,6 @@ end
 	  
 describe MatrixDSL do
     
-    
 
     before :each do
 	  
@@ -234,7 +233,6 @@ describe MatrixDSL do
    end
    
 
-   
    
     
 
