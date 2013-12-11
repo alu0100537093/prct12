@@ -178,7 +178,9 @@ describe "Operaciones con matrices discretas" do
 	   @m7.encontrar{ |e| e*e >=16 }.should == [0,1]
 	    
 	    
-	end    
-
+	end  
+	
+	  
+describe MatrixDSL do
 
 end
