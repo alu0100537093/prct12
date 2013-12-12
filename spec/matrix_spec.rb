@@ -189,22 +189,25 @@ describe MatrixDSL do
     before :each do
 	  
 	 @ejemplo1 = MatrixDSL.new("Suma") do 
-	     
-		operand([[1,1],[1,1]])
-		operand([[1,1],[1,1]])
+	    
+	    operand([[3,7],[4,2]])
+		operand([[1,3],[8,2]])
 		
 	end
 	
 	
 	@ejemplo2 = MatrixDSL.new("Resta") do 
-		operand([[2,2],[2,2]])
-		operand([[1,1],[1,1]])
+		
+		operand([[4,5],[2,7]])
+		operand([[3,1],[2,5]])
 		
 	end
 	
 	@ejemplo3 = MatrixDSL.new("Producto") do 
-		operand([[1,2],[3,4]])
-		operand([[1,2],[3,4]])
+		
+		operand([[3,6],[4,2]])
+		operand([[7,5],[0,3]])
+		
 	end
 	
 	end
@@ -212,14 +215,14 @@ describe MatrixDSL do
    	
 	it "el resultado de la suma debe dar correcto" do
 	
-	        @ejemplo1.resultado.should == ('[[2,2],[2,2]]') 
+		@ejemplo1.resultado.should == ('[[4,10],[12,4]]') 
   
 
 	end
 	
 	it "el resultado de la resta debe dar correcto" do
 		    
-		    @ejemplo2.resultado.should == ('[[1,1],[1,1]]') 
+		@ejemplo2.resultado.should == ('[[1,4],[0,2]]') 
 		    
 		    
     end
@@ -228,7 +231,7 @@ describe MatrixDSL do
     	
 	it "el resultado del producto debe dar correcto" do
 
-  	@ejemplo3.resultado.should == ('[[7,10],[15,22]]')
+		@ejemplo3.resultado.should == ('[[21,33],[28,26]]')
     
    end
    
